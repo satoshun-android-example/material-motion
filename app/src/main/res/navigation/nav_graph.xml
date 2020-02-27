@@ -20,6 +20,10 @@
     <action
       android:id="@+id/nav_home_to_fade_through"
       app:destination="@id/nav_fade_through" />
+
+    <action
+      android:id="@+id/nav_home_to_shared_axis"
+      app:destination="@id/nav_shared_axis" />
   </fragment>
 
   <fragment
@@ -31,6 +35,11 @@
     android:id="@+id/nav_fade_through"
     android:name="com.github.satoshun.example.main.fadethrough.FadeThroughFragment"
     tools:layout="@layout/fade_frag" />
+
+  <fragment
+    android:id="@+id/nav_shared_axis"
+    android:name="com.github.satoshun.example.main.sharedaxis.SharedAxisFragment"
+    tools:layout="@layout/shared_axis_frag" />
 
   <fragment
     android:id="@+id/nav_simple"

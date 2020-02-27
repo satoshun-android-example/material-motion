@@ -21,5 +21,9 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.fadeThrough.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToFadeThrough())
     }
+
+    binding.sharedAxis.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToSharedAxis())
+    }
   }
 }
