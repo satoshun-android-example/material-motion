@@ -89,6 +89,7 @@ const val DAGGER_ANDROID_SUPPORT_RUNTIME = "com.google.dagger:dagger-android-sup
 
 const val GLIDE = "com.github.bumptech.glide:glide:4.9.0"
 const val PICASSO = "com.squareup.picasso:picasso:2.71828"
+const val COIL = "io.coil-kt:coil:0.9.5"
 
 const val JUNIT = "junit:junit:4.13-beta-1"
 const val TRUTH = "com.google.truth:truth:0.42"

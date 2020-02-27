@@ -25,5 +25,9 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.sharedAxis.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToSharedAxis())
     }
+
+    binding.simple.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToSimple())
+    }
   }
 }

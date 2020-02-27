@@ -57,6 +57,8 @@ dependencies {
   implementation NAVIGATION_FRAGMENT
   implementation NAVIGATION_UI
 
+  implementation COIL
+
   testImplementation JUNIT
 
   androidTestImplementation TEST_RUNNER

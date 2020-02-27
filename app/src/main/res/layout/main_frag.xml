@@ -10,20 +10,27 @@
     android:id="@+id/fade"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:text="Fade" />
 
   <Button
     android:id="@+id/fade_through"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:text="Fade Through" />
 
   <Button
     android:id="@+id/shared_axis"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:text="Shared Axis" />
+
+  <Button
+    android:id="@+id/simple"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:layout_margin="8dp"
+    android:text="Simple" />
 </LinearLayout>

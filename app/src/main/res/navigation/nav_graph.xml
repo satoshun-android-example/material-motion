@@ -44,5 +44,5 @@
   <fragment
     android:id="@+id/nav_simple"
     android:name="com.github.satoshun.example.main.simple.SimpleFragment"
-    tools:layout="@layout/simple_frag" />
+    tools:layout="@layout/simple_list_frag" />
 </navigation>
