@@ -16,12 +16,21 @@
     <action
       android:id="@+id/nav_home_to_fade"
       app:destination="@id/nav_fade" />
+
+    <action
+      android:id="@+id/nav_home_to_fade_through"
+      app:destination="@id/nav_fade_through" />
   </fragment>
 
   <fragment
     android:id="@+id/nav_fade"
     android:name="com.github.satoshun.example.main.fade.FadeFragment"
-    tools:layout="@layout/simple_frag" />
+    tools:layout="@layout/fade_frag" />
+
+  <fragment
+    android:id="@+id/nav_fade_through"
+    android:name="com.github.satoshun.example.main.fadethrough.FadeThroughFragment"
+    tools:layout="@layout/fade_frag" />
 
   <fragment
     android:id="@+id/nav_simple"

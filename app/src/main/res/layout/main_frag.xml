@@ -12,4 +12,11 @@
     android:layout_height="64dp"
     android:layout_margin="16dp"
     android:text="Fade" />
+
+  <Button
+    android:id="@+id/fade_through"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:layout_margin="16dp"
+    android:text="Fade Through" />
 </LinearLayout>

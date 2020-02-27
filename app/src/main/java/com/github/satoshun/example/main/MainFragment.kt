@@ -17,5 +17,9 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.fade.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToFade())
     }
+
+    binding.fadeThrough.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToFadeThrough())
+    }
   }
 }
