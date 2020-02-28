@@ -14,6 +14,7 @@ import com.github.satoshun.example.R
 import com.github.satoshun.example.databinding.SimpleDetailFragBinding
 import com.github.satoshun.example.databinding.SimpleFragBinding
 import com.github.satoshun.example.databinding.SimpleListFragBinding
+import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 
 class SimpleFragment : Fragment(R.layout.simple_frag) {
@@ -35,15 +36,22 @@ class SimpleFragment : Fragment(R.layout.simple_frag) {
 }
 
 class SimpleListFragment : Fragment(R.layout.simple_list_frag) {
+  val TAG = "SimpleListFragment"
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    exitTransition = Hold()
+  }
+
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     val binding = SimpleListFragBinding.bind(view)
 
     val images = listOf(
-      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
-      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
-      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
-      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
+//      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
+//      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
+//      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
+//      "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg",
       "https://pbs.twimg.com/profile_images/1227058593247064064/ssXXDIjO_400x400.jpg"
     )
     binding.recycler.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -60,18 +68,22 @@ class SimpleListFragment : Fragment(R.layout.simple_list_frag) {
         val imageView: ImageView = holder.itemView.findViewById(R.id.image)
         imageView.load(images[position])
 
-        val sharedView = holder.itemView
+//        val sharedView = holder.itemView
+        val sharedView = imageView
 
         // TODO unique id
         ViewCompat.setTransitionName(sharedView, images[position])
 
         holder.itemView.setOnClickListener {
-          parentFragmentManager
+          requireFragmentManager()
             .beginTransaction()
             .addSharedElement(sharedView, ViewCompat.getTransitionName(sharedView)!!)
             .replace(
               R.id.fragment_container,
-              SimpleDetailFragment().apply { url = images[position] })
+              SimpleDetailFragment().apply { url = images[position] },
+              TAG
+            )
+            .addToBackStack(TAG)
             .commit()
         }
       }
@@ -98,9 +110,10 @@ class SimpleDetailFragment : Fragment(R.layout.simple_detail_frag) {
     super.onViewCreated(view, savedInstanceState)
     val binding = SimpleDetailFragBinding.bind(view)
 
-    // TODO unique id
-    ViewCompat.setTransitionName(binding.container, url)
-
     binding.image.load(url)
+
+    // TODO unique id
+//    ViewCompat.setTransitionName(binding.container, url)
+    ViewCompat.setTransitionName(binding.image, url)
   }
 }
