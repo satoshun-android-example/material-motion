@@ -15,6 +15,7 @@ import com.github.satoshun.example.databinding.SimpleDetailFragBinding
 import com.github.satoshun.example.databinding.SimpleFragBinding
 import com.github.satoshun.example.databinding.SimpleListFragBinding
 import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialArcMotion
 import com.google.android.material.transition.MaterialContainerTransform
 
 class SimpleFragment : Fragment(R.layout.simple_frag) {
@@ -102,8 +103,11 @@ class SimpleDetailFragment : Fragment(R.layout.simple_detail_frag) {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    val transform = MaterialContainerTransform(requireContext())
-    sharedElementEnterTransition = transform
+    sharedElementEnterTransition = MaterialContainerTransform(requireContext()).apply {
+      pathMotion = MaterialArcMotion()
+      fadeMode = MaterialContainerTransform.FADE_MODE_CROSS
+      isDrawDebugEnabled = true
+    }
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
