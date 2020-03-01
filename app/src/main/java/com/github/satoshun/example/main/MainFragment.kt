@@ -29,5 +29,9 @@ class MainFragment : Fragment(R.layout.main_frag) {
     binding.simple.setOnClickListener {
       findNavController().navigate(MainFragmentDirections.navHomeToSimple())
     }
+
+    binding.fragment.setOnClickListener {
+      findNavController().navigate(MainFragmentDirections.navHomeToFragment())
+    }
   }
 }

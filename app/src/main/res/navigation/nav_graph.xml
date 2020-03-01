@@ -24,6 +24,10 @@
     <action
       android:id="@+id/nav_home_to_shared_axis"
       app:destination="@id/nav_shared_axis" />
+
+    <action
+      android:id="@+id/nav_home_to_fragment"
+      app:destination="@id/nav_fragment" />
   </fragment>
 
   <fragment
@@ -44,5 +48,10 @@
   <fragment
     android:id="@+id/nav_simple"
     android:name="com.github.satoshun.example.main.simple.SimpleFragment"
+    tools:layout="@layout/simple_list_frag" />
+
+  <fragment
+    android:id="@+id/nav_fragment"
+    android:name="com.github.satoshun.example.main.fragment.BasicFragment"
     tools:layout="@layout/simple_list_frag" />
 </navigation>
